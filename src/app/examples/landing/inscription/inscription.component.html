@@ -1,0 +1,98 @@
+<div class="section landing-section">
+  <div class="container">
+    <h2 class="text-center">Keep in touch?</h2>
+    <div *ngIf="Message" class="alert alert-success" role="alert">{{Message}}</div>
+    <mat-card>
+      <div class="parent">
+        <form (submit)="onSignup()" [formGroup]="form">
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="nom"
+              type="text"
+              placeholder="Nom"
+              required
+            />
+            <mat-error *ngIf="form.get('nom').invalid"
+              >Entrez votre nom</mat-error
+            >
+          </mat-form-field>
+
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="prenom"
+              type="text"
+              placeholder="Prenom"
+              required
+            />
+            <mat-error *ngIf="form.get('prenom').invalid"
+              >Entrez votre prenom</mat-error
+            >
+          </mat-form-field>
+
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="tel"
+              type="number"
+              placeholder="Tel"
+              minlength="8"
+              maxlength="8"
+              required
+            />
+            <mat-error *ngIf="form.get('tel').invalid"
+              >Ajoutez votre num de telephone</mat-error
+            >
+          </mat-form-field>
+
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="email"
+              type="email"
+              placeholder="Email"
+              email
+              required
+            />
+            <mat-error *ngIf="form.get('email').invalid"
+              >Ajoutez votre adresse email</mat-error
+            >
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Programme de formation</mat-label>
+            <select formControlName="programme" matNativeControl required>
+              <option
+                *ngFor="let programme of programmes"
+                [ngValue]="programme"
+              >
+                {{ programme }}
+              </option>
+            </select>
+            <mat-error *ngIf="form.get('programme').invalid"
+              >Choisir le programme de fromation</mat-error
+            >
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Site de formation</mat-label>
+            <select formControlName="site" matNativeControl required>
+              <option *ngFor="let site of sites" [ngValue]="site">
+                {{ site }}
+              </option>
+            </select>
+            <mat-error *ngIf="form.get('site').invalid"
+              >Choisir le site de formation</mat-error
+            >
+          </mat-form-field>
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-danger" type="submit">Inscription</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card>
+  </div>
+</div>
