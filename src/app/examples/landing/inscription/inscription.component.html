@@ -1,7 +1,9 @@
 <div class="section landing-section">
   <div class="container">
     <h2 class="text-center">Keep in touch?</h2>
-    <div *ngIf="Message" class="alert alert-success" role="alert">{{Message}}</div>
+    <div *ngIf="Message" class="alert alert-success" role="alert">
+      {{ Message }}
+    </div>
     <mat-card>
       <div class="parent">
         <form (submit)="onSignup()" [formGroup]="form">
@@ -86,10 +88,8 @@
               >Choisir le site de formation</mat-error
             >
           </mat-form-field>
-          <div class="row">
-            <div class="col">
-              <button class="btn btn-danger" type="submit">Inscription</button>
-            </div>
+          <div class="Bsubmit">
+            <button class="btn btn-danger" type="submit">Inscription</button>
           </div>
         </form>
       </div>

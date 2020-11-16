@@ -22,7 +22,7 @@ export class InscriptionService {
         this.http.post<{ message: String, Inscription: any }>("http://localhost:5000/api/inscription", inscriptionData)
             .subscribe(response => {
                 console.log(response.message)
-
+               
                 this.messageid = response.message
                 this.inscriptionStatus.next(this.messageid)
 
