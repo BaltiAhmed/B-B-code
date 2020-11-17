@@ -6,7 +6,8 @@ mat-form-field{
 }
 
 .parent{
-    margin-left: 10%;
+    
+    text-align: center;
 }
 
 .Bsubmit{
@@ -20,7 +21,9 @@ mat-form-field{
         width: 90%;
     }
     .parent{
-        margin-left: 0%;
+       
+        text-align: center;
+
     }
    
   }

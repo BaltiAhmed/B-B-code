@@ -1,11 +1,16 @@
 <div class="section landing-section">
   <div class="container">
     <h2 class="text-center">Keep in touch?</h2>
-    <div *ngIf="Message" class="alert alert-success" role="alert">
-      {{ Message }}
-    </div>
+    
     <mat-card>
       <div class="parent">
+        <div *ngIf="Message" class="alert alert-success" role="alert">
+          {{ Message }}
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+          {{ errorMessage }}
+        </div>
+        
         <form (submit)="onSignup()" [formGroup]="form">
           <mat-form-field>
             <input

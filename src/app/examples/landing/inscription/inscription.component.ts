@@ -29,14 +29,24 @@ export class Inscription implements OnInit {
   Message = null
   private authListenerSubs: Subscription
 
+  errorMessage = null
+  private ErrorMessageSubs: Subscription
+
   constructor(public InscriptionService: InscriptionService) { }
 
   ngOnInit() {
 
-    this.Message = this.InscriptionService.getMessage()
-    this.authListenerSubs = this.InscriptionService.getinscriptionStatus()
+    this.Message = this.InscriptionService.getMessage().message
+    this.authListenerSubs = this.InscriptionService.getinscriptionStatus().message
       .subscribe(isAuth => {
         this.Message = isAuth
+        this.errorMessage = null
+      })
+    this.errorMessage = this.InscriptionService.getMessage().error
+    this.ErrorMessageSubs = this.InscriptionService.getinscriptionStatus().error
+      .subscribe(ErrorMessage => {
+        this.errorMessage = ErrorMessage
+        
       })
 
     this.form = new FormGroup({
