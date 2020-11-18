@@ -15,6 +15,10 @@
     "e2e": "ng e2e",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"
   },
+  "engines": {
+    "node": "v8.11.4",
+    "npm": "5.8.0"
+  },
   "dependencies": {
     "@angular/animations": "9.0.6",
     "@angular/cdk": "^9.2.4",
@@ -31,10 +35,12 @@
     "@ng-bootstrap/ng-bootstrap": "6.0.0",
     "bootstrap": "4.1.2",
     "core-js": "3.6.4",
+    "express": "^4.17.1",
     "jquery": "3.2.1",
     "jw-bootstrap-switch-ng2": "2.0.1",
     "ng2-nouislider": "1.7.12",
     "nouislider": "9.2.0",
+    "path": "^0.12.7",
     "popper.js": "1.14.4",
     "rxjs": "6.5.4",
     "rxjs-compat": "6.5.4",
