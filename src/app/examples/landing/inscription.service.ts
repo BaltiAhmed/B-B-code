@@ -22,7 +22,7 @@ export class InscriptionService {
 
         const inscriptionData: InscriptionData = { nom: nom, prenom: prenom, email: email, tel: tel, programme: programme, site: site }
 
-        this.http.post<{ message: String, Inscription: any }>("http://localhost:5000/api/inscription", inscriptionData)
+        this.http.post<{ message: String, Inscription: any }>("https://bandbcode.herokuapp.com/api/inscription", inscriptionData)
             .subscribe(response => {
                 this.messageid = response.message
                 this.inscriptionStatus.next(this.messageid)
